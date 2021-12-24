@@ -19,31 +19,60 @@ body {
   background-color: #ffffff;
 }
 
-.header{
-display:flex;
-background: linear-gradient(90deg, #672280 1.18%, #A626D3 100%);
-color: #ffffff;
-height: 65px;
-width: 550px;
-padding:15px;
+/* Header component styles */
+
+.header {
+  display: flex;
+  background: linear-gradient(90deg, #672280 1.18%, #a626d3 100%);
+  color: #ffffff;
+  height: 65px;
+  width: 550px;
+  padding: 20px;
 }
 
 .logo {
   height: 26.21px;
-  width: 31.30px;
-align-self:center;
+  width: 31.3px;
+  align-self: center;
 }
 
 .logo--title {
-font-size: 21px;
-font-weight: 700;
-margin-right:auto;
-align-self:center;
-margin-left: 10px;
+  font-size: 21px;
+  font-weight: 700;
+  margin-right: auto;
+  align-self: center;
+  margin-left: 10px;
 }
 
-.project--number{
+.project--number {
+  font-size: 12px;
+  font-weight: 500;
+  text-align: right;
+}
+
+/* Meme component styles aka form input */
+.form--group {
+  padding: 20px;
+}
+
+.form--input {
 font-size: 12px;
-font-weight: 500;
-text-align: right;
+font-weight: 400;
+height: 35px;
+outline: none;
+padding: 10px;
+border-radius: 5px;
+width: 50%;
+border: 1px solid #D5D4D8;
+}
+
+.form--submit {
+  height: 40px;
+  border-radius: 5px;
+  color: #ffffff;
+  background: linear-gradient(90.41deg, #711f8d 1.14%, #a818da 100%);
+  width: 100%;
+  display: block;
+  margin: 15px 0;
+outline: none;
 }
