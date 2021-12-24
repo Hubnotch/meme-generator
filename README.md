@@ -1,7 +1,7 @@
 # Getting Started with Meme Generator App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-It is app for making meme images on the web.
+It is an app for making meme images on the web.
 It accepts an input and a randomly generated image.
 It outputs an meme image you can share or download to your local machine.
 
