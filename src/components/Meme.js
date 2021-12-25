@@ -1,14 +1,17 @@
-import React from "react";
+import React,{useState} from "react";
 import memesData from "../memesData"
+
+
 function Meme() {
   // console.log(memesData.data.memes[6].url)
   // console.log(memesData.data.memes.length);
-
+const [memeImage, setMemeImage] = useState("")
   const getRandomImage = () =>{
     const memesArray = memesData.data.memes
     const index = Math.floor(Math.random() * memesArray.length);
     const image = memesArray[index].url;
-    console.log(image);
+    //console.log(image);
+    setMemeImage( image)
   }
   return (
     <main className="form--group">
@@ -19,6 +22,7 @@ function Meme() {
           Get a new meme image 🖼
         </button>
       </div>
+      <img src={memeImage} alt={memeImage} className="meme--Image" />
     </main>
   );
 }

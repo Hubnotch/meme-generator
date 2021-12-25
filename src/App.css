@@ -85,3 +85,10 @@ font-weight: 700;
 text-align: center;
 cursor: pointer;
 }
+
+.meme--Image{
+  max-width: 100%;
+/* width: 477px; */
+border-radius: 2px;
+margin-top: 36px;
+}
