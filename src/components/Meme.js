@@ -4,19 +4,18 @@ import memesData from "../memesData";
 function Meme() {
   // console.log(memesData.data.memes[6].url)
   // console.log(memesData.data.memes.length);
-  const [memeImage, setMemeImage] = useState({
+  const [meme, setMeme] = useState({
     topText: "",
     bottomText: "",
     randomImage: "http://i.imgflip.com/1bij.jpg",
   });
-  const [allMemeImages, setAllMemeImages] = useState(memesData);
-
+  
   const getMemeImage = () => {
     const memesArray = memesData.data.memes;
     const index = Math.floor(Math.random() * memesArray.length);
     const image = memesArray[index].url;
     //console.log(image);
-    setMemeImage(image);
+    setMeme(image);
   };
   return (
     <main className="form--group">
@@ -27,7 +26,7 @@ function Meme() {
           Get a new meme image 🖼
         </button>
       </div>
-      <img src={memeImage.randomImage} alt={memeImage.randomImage} className="meme--Image" />
+      <img src={meme.randomImage} alt={meme.randomImage} className="meme--Image" />
     </main>
   );
 }
