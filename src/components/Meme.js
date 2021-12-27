@@ -10,13 +10,20 @@ function Meme() {
     randomImage: "http://i.imgflip.com/1bij.jpg",
   });
   
+  const [allMemeImage,setAllMemeImage] = useState(memesData)
+
+
+
   const getMemeImage = () => {
     const memesArray = memesData.data.memes;
     const index = Math.floor(Math.random() * memesArray.length);
-    const image = memesArray[index].url;
+    const imageUrl = memesArray[index].url;
     //console.log(image);
-    setMeme(image);
-  };
+    setMeme(prevMeme=> ({
+      ...prevMeme,
+      randomImage:imageUrl
+    }));
+  };  
   return (
     <main className="form--group">
       <div className="form">
