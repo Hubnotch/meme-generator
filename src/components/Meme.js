@@ -9,31 +9,55 @@ function Meme() {
     bottomText: "",
     randomImage: "http://i.imgflip.com/1bij.jpg",
   });
-  
-  const [allMemeImage,setAllMemeImage] = useState(memesData)
-
-
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setMeme((prevMeme) => {
+      return {
+        ...prevMeme,
+        [name]: value,
+      };
+    });
+  };
+  const [allMemeImage, setAllMemeImage] = useState(memesData);
 
   const getMemeImage = () => {
     const memesArray = memesData.data.memes;
     const index = Math.floor(Math.random() * memesArray.length);
     const imageUrl = memesArray[index].url;
     //console.log(image);
-    setMeme(prevMeme=> ({
+    setMeme((prevMeme) => ({
       ...prevMeme,
-      randomImage:imageUrl
+      randomImage: imageUrl,
     }));
-  };  
+  };
   return (
     <main className="form--group">
       <div className="form">
-        <input type="text" placeholder="Text on  top" className="form--input" />
-        <input type="text" placeholder="Text below" className="form--input" />
+        <input
+          type="text"
+          placeholder="Text on  top"
+          className="form--input"
+          value={meme.topText}
+          name="topText"
+          onChange={handleChange}
+        />
+        <input
+          type="text"
+          placeholder="Text below"
+          className="form--input"
+          value={meme.bottomText}
+          name="bottomText"
+          onChange={handleChange}
+        />
         <button onClick={getMemeImage} type="submit" className="form--button">
           Get a new meme image 🖼
         </button>
       </div>
-      <img src={meme.randomImage} alt={meme.randomImage} className="meme--Image" />
+      <div className="meme">
+        <img src={meme.randomImage} className="meme--image" />
+        <h2 className="meme--text top">{meme.topText}</h2>
+        <h2 className="meme--text bottom">{meme.bottomText}</h2>
+      </div>
     </main>
   );
 }
